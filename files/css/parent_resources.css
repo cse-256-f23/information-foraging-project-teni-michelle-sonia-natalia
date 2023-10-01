@@ -1,2 +1,8 @@
 @import url("common.css");
 @import url("accordian.css");
+ul{
+    list-style-position: inside;
+}
+ul li{
+    padding: 5px 0px;
+}
