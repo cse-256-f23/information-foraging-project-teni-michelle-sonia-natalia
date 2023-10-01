@@ -12,6 +12,7 @@
     Curriculum Overview | Nursery School | Washington University in St. Louis
   </title>
   
+  <!-- Collapsibles from: https://www.w3schools.com/howto/howto_js_collapsible.asp -->
   <style>
     .collapsible {
       background-color: #777;
@@ -24,15 +25,28 @@
       outline: none;
       font-size: 15px;
     }
-    
+
     .active, .collapsible:hover {
       background-color: #555;
     }
-    
+
+    .collapsible:after {
+      content: '\002B';
+      color: white;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+
+    .active:after {
+      content: "\2212";
+    }
+
     .content {
       padding: 0 18px;
-      display: none;
+      max-height: 0;
       overflow: hidden;
+      transition: max-height 0.2s ease-out;
       background-color: #f1f1f1;
     }
     </style>
@@ -48,7 +62,9 @@
         philosophy and educational practices may be found in the
         <a class="download" href="downloads/curriculum_overview.pdf" target="_blank">Curriculum Overview</a>.
         <br><br>
-        An outline of all skill developments are highlighted below.
+        An outline of all skill developments and personalized help strategies are highlighted below.
+        <b>For additional information on our art, music, Spanish, and science curriculums, see 
+        <a href="files/enrichment_programs.html" target="_blank">Enrichment Programs (Electives)</a>.</b>
       </p>
 
       <h3>Social/Emotional Development</h3>
