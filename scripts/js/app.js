@@ -1593,10 +1593,23 @@ exports.Accordion = Accordion;
 },{"./../core/dom/document":6}],24:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function doSomething() {
-    console.log("Put some code in here!");
+function curriculumCollapse() {
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+            content.style.maxHeight = null;
+            } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            } 
+        });
+    }
 }
-exports.doSomething = doSomething;
+exports.curriculumCollapse = curriculumCollapse;
 
 },{}],25:[function(require,module,exports){
 "use strict";
@@ -1646,7 +1659,7 @@ var slideshow_1 = require("./slideshow");
 function PutStudentPageLoadOperationsInsideThisStudentBody() {
     // TODO: Put all operations that you want to happen on ever page load in this function.
     // For example you could write: Sticky.setup()
-    do_something_1.doSomething();
+    do_something_1.curriculumCollapse();
 }
 exports.PutStudentPageLoadOperationsInsideThisStudentBody = PutStudentPageLoadOperationsInsideThisStudentBody;
 function setupAll() {
